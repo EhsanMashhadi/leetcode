@@ -1,5 +1,3 @@
-import kotlin.math.max
-
 fun main() {
     val maximumSubarray = MaximumSubarray()
     val array = intArrayOf(-2, 1, -3, 4, -1, 2, 1, -5, 4)
@@ -14,8 +12,8 @@ class MaximumSubarray {
         var currentSum = nums[0]
 
         for (i in 1 until nums.size) {
-            currentSum = max(nums[i], currentSum + nums[i])
-            maxSum = max(currentSum, maxSum)
+            currentSum = Math.max(nums[i], currentSum + nums[i])
+            maxSum = Math.max(currentSum, maxSum)
         }
         return maxSum
     }
