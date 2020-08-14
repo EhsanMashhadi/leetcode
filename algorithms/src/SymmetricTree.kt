@@ -2,24 +2,23 @@ import java.util.*
 
 fun main() {
     val symmetricTree = SymmetricTree()
-    var ti = TreeNode(1)
-    val left = TreeNode(2)
-    val leftLeft = TreeNode(3)
-    val leftRight = TreeNode(4)
+    val tree = SymmetricTree.TreeNode(1)
+    val left = SymmetricTree.TreeNode(2)
+    val leftLeft = SymmetricTree.TreeNode(3)
+    val leftRight = SymmetricTree.TreeNode(4)
     left.left = leftLeft
     left.right = leftRight
 
-    val right = TreeNode(2)
-    val rightLeft = TreeNode(4)
-    val rightRight = TreeNode(3)
+    val right = SymmetricTree.TreeNode(2)
+    val rightLeft = SymmetricTree.TreeNode(4)
+    val rightRight = SymmetricTree.TreeNode(3)
     right.left = rightLeft
     right.right = rightRight
 
-//    ti.left = left
-//    ti.right = right
+    tree.left = left
+    tree.right = right
 
-
-    val result = symmetricTree.run(ti)
+    val result = symmetricTree.run(tree)
     println(result)
 }
 
@@ -48,9 +47,10 @@ class SymmetricTree {
         }
         return true
     }
+
+    class TreeNode(var `val`: Int) {
+        var left: TreeNode? = null
+        var right: TreeNode? = null
+    }
 }
 
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
-}
