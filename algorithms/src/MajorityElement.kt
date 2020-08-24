@@ -1,6 +1,6 @@
 fun main() {
     val majorityElement = MajorityElement()
-    val result = majorityElement.run(intArrayOf(1,2,2,2))
+    val result = majorityElement.run1(intArrayOf(1, 2, 2, 2))
     println(result)
 }
 
@@ -20,5 +20,23 @@ class MajorityElement {
                 return set.key
         }
         return -1
+    }
+
+    //Boyer-Moore Voting Algorithm
+    fun run1(nums: IntArray): Int {
+
+        var count = 0
+        var candidate = 0
+
+        for (num in nums) {
+            if (count == 0) {
+                candidate = num
+            }
+            count += if (num == candidate)
+                1
+            else
+                -1
+        }
+        return candidate
     }
 }
