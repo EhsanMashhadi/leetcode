@@ -6,14 +6,15 @@ import kotlin.collections.ArrayList
 fun main() {
     val binaryTreeInorderTraversal = BinaryTreeInorderTraversal()
     val tree = BinaryTreeInorderTraversal.TreeNode(1)
-    tree.left = BinaryTreeInorderTraversal.TreeNode(2)
-    tree.left!!.left = BinaryTreeInorderTraversal.TreeNode(4)
-    tree.left!!.right = BinaryTreeInorderTraversal.TreeNode(5)
+    val left = BinaryTreeInorderTraversal.TreeNode(2)
+    left.left = BinaryTreeInorderTraversal.TreeNode(4)
+    left.right = BinaryTreeInorderTraversal.TreeNode(5)
+    tree.left = left
 
     val rightNode = BinaryTreeInorderTraversal.TreeNode(3)
     tree.right = rightNode
 
-    val result = binaryTreeInorderTraversal.run1(tree)
+    val result = binaryTreeInorderTraversal.run(tree)
     for (num in result)
         println(num)
 }
